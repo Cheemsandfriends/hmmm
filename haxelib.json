@@ -1,0 +1,12 @@
+{
+    "name": "hmmm",
+    "url": "https://github.com/CheemsAndFriends/hmmm",
+    "license": "MIT",
+    "tags": [],
+    "description": "A HMM file maker with local haxelibs",
+    "version": "1.0.0",
+    "releasenote": "Initial commit",
+    "contributors": ["MrCheemsAndFriends"],
+    "dependencies": {}
+    
+}
