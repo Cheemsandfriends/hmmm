@@ -21,10 +21,10 @@ class Main
 
             if (Sys.systemName() == "Windows") {
                 
-                File.saveContent(Sys.getEnv("HAXEPATH") + "/hmmm.cmd", File.getContent("./hmmm.cmd"));
+                File.saveContent(Sys.getEnv("HAXEPATH") + "/hmmm.cmd", File.getContent("./dump/hmmm.cmd"));
             } else {
                 var linkPath = "/usr/local/bin/hmm";
-                var realPath = FileSystem.absolutePath("./");
+                var realPath = FileSystem.absolutePath("./") + "dump/hmm";
                 Sys.command("chmod", ["+x", realPath]);
                 Sys.command("sudo", ["rm", linkPath]);
                 Sys.command("sudo", ["ln", "-s", realPath, linkPath]);

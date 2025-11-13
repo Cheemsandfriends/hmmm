@@ -16,4 +16,4 @@ Warning! every argument should go *before* the file. Right now there are two pos
 * --v or --verbose: traces the stuff
 * --g or --global: explicitly fetches from your global haxelib libraries list
 
-![image](image.png)
+![image](./dump/image.png)
