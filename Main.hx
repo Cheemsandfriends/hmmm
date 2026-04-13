@@ -37,6 +37,14 @@ class Main
 
         var path = args[args.length - 1];
 
+        var prev = [];
+
+        if (FileSystem.exists(path + "hmm.json"))
+        {
+            hmm = Json.parse(File.getContent(path + "hmm.json"));
+            prev = hmm.dependencies.map(d -> d.name);
+        }
+
         
         args.pop();
 
@@ -94,13 +102,16 @@ class Main
 
             
 
-            list = list.filter(f -> libs.indexOf(f.split(":")[0]) != -1);
+            list = list.filter(f -> libs.indexOf(f.split(":")[0]) != -1 && prev.indexOf(f.split(":")[0]) == -1);
+
+            trace(list);
 
             libs = [];
 
 
             for (i in 0...list.length)
             {
+
 
                 libs.push(list[i].split(":")[0]);
                 list[i] = StringTools.trim(list[i].split("[")[1].split("]")[0]);
